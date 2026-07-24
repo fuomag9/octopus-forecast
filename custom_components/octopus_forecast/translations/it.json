@@ -1,0 +1,63 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Octopus Forecast",
+        "description": "Inserisci la tua API key personale di Octopus Energy Italia. La trovi nella tua area personale in Impostazioni ({url}). Ha il formato `sk_live_...`.",
+        "data": {
+          "api_key": "API key"
+        }
+      },
+      "account": {
+        "title": "Scegli il contratto",
+        "description": "La tua API key dà accesso a più contratti. Scegli quello da prevedere.",
+        "data": {
+          "account_number": "Contratto"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Autentica di nuovo Octopus Forecast",
+        "description": "La tua API key non è più valida. Inseriscine una nuova.",
+        "data": {
+          "api_key": "API key"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "API key non valida.",
+      "cannot_connect": "Impossibile contattare Octopus Energy. Riprova.",
+      "unknown": "Errore imprevisto."
+    },
+    "abort": {
+      "already_configured": "Questo contratto è già configurato.",
+      "reauth_successful": "Autenticazione completata con successo."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Impostazioni previsione",
+        "description": "Lascia vuoti gli override per far apprendere all'integrazione i costi fissi e per kWh dallo storico delle tue bollette.",
+        "data": {
+          "vat_rate": "Aliquota IVA (%)",
+          "fixed_monthly_override": "Override costo fisso mensile (€)",
+          "unit_rate_override": "Override prezzo unitario (€/kWh)"
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "month_cost_forecast": { "name": "Previsione bolletta mensile" },
+      "month_energy_forecast": { "name": "Previsione energia mensile" },
+      "month_to_date_cost": { "name": "Costo del mese a oggi" },
+      "month_to_date_energy": { "name": "Energia del mese a oggi" },
+      "remaining_cost": { "name": "Costo residuo del mese" },
+      "fixed_monthly_cost": { "name": "Costo fisso mensile" },
+      "unit_rate": { "name": "Prezzo unitario effettivo" },
+      "account_balance": { "name": "Saldo del contratto" },
+      "last_bill": { "name": "Ultima bolletta" },
+      "average_monthly_bill": { "name": "Bolletta media mensile" }
+    }
+  }
+}

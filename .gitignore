@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.ruff_cache/
+.mypy_cache/
+.pytest_cache/
+
+# Home Assistant / test artifacts
+.storage/
+*.log
+.HA_VERSION
+
+# OS / editors
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# Secrets — never commit API keys
+secrets.yaml
+.env

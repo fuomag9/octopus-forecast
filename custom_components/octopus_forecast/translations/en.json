@@ -1,0 +1,63 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Octopus Forecast",
+        "description": "Enter your Octopus Energy Italy personal API key. You can find it in your online account under Impostazioni ({url}). It looks like `sk_live_...`.",
+        "data": {
+          "api_key": "API key"
+        }
+      },
+      "account": {
+        "title": "Choose account",
+        "description": "Your API key gives access to more than one account. Pick the one to forecast.",
+        "data": {
+          "account_number": "Account"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Re-authenticate Octopus Forecast",
+        "description": "Your API key is no longer valid. Enter a new one.",
+        "data": {
+          "api_key": "API key"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Invalid API key.",
+      "cannot_connect": "Could not reach Octopus Energy. Please try again.",
+      "unknown": "Unexpected error."
+    },
+    "abort": {
+      "already_configured": "This account is already set up.",
+      "reauth_successful": "Re-authentication was successful."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Forecast settings",
+        "description": "Leave the overrides empty to let the integration learn your fixed and per-kWh costs from your billing history.",
+        "data": {
+          "vat_rate": "VAT rate (%)",
+          "fixed_monthly_override": "Fixed monthly cost override (€)",
+          "unit_rate_override": "Unit rate override (€/kWh)"
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "month_cost_forecast": { "name": "Monthly bill forecast" },
+      "month_energy_forecast": { "name": "Monthly energy forecast" },
+      "month_to_date_cost": { "name": "Cost this month to date" },
+      "month_to_date_energy": { "name": "Energy this month to date" },
+      "remaining_cost": { "name": "Remaining cost this month" },
+      "fixed_monthly_cost": { "name": "Fixed monthly cost" },
+      "unit_rate": { "name": "Effective unit rate" },
+      "account_balance": { "name": "Account balance" },
+      "last_bill": { "name": "Last bill" },
+      "average_monthly_bill": { "name": "Average monthly bill" }
+    }
+  }
+}

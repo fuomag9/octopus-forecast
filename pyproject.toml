@@ -1,0 +1,11 @@
+[tool.ruff]
+target-version = "py312"
+line-length = 88
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "BLE", "RUF", "UP", "SIM"]
+
+[tool.ruff.lint.per-file-ignores]
+# Broad except in the config flow is the documented Home Assistant pattern
+# for turning any unexpected validation error into an "unknown" form error.
+"custom_components/octopus_forecast/config_flow.py" = ["BLE001"]
