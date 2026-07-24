@@ -23,6 +23,10 @@ jobs:
       - uses: hacs/action@main
         with:
           category: integration
+          # "brands" only passes once the domain is registered in
+          # home-assistant/brands, which is a separate PR and only needed for
+          # inclusion in the HACS default store — not for custom-repo installs.
+          ignore: brands
 
   ruff:
     name: Ruff
