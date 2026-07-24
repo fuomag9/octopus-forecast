@@ -3,7 +3,7 @@
     "step": {
       "user": {
         "title": "Octopus Forecast",
-        "description": "Enter your Octopus Energy Italy personal API key. You can find it in your online account under Impostazioni ({url}). It looks like `sk_live_...`.",
+        "description": "Enter your Octopus Energy Italy API key. Octopus Italy does not show it in its website — generate one from your account by following the instructions in the integration README ({url}).",
         "data": {
           "api_key": "API key"
         }

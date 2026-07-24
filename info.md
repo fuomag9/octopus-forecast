@@ -12,7 +12,8 @@ already metered plus your historical run‑rate.
 **Sensors:** monthly bill forecast, monthly energy forecast, cost/energy month‑to‑date,
 remaining cost, fixed monthly cost, effective unit rate, account balance, last bill.
 
-**Setup:** add the integration and paste your personal API key from
-*octopusenergy.it → area personale → Impostazioni*.
+**Setup:** add the integration and paste your Octopus Energy Italy API key.
+Octopus Italy doesn't show it in the website — the README explains how to
+generate one from your account in a few seconds.
 
 Unofficial community integration; not affiliated with Octopus Energy.

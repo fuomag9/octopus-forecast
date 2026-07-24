@@ -76,7 +76,7 @@ class OctopusForecastConfigFlow(ConfigFlow, domain=DOMAIN):
             data_schema=vol.Schema({vol.Required(CONF_API_KEY): str}),
             errors=errors,
             description_placeholders={
-                "url": "https://octopusenergy.it/area-personale"
+                "url": "https://github.com/fuomag9/octopus-forecast#getting-your-api-key"
             },
         )
 

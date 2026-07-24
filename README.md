@@ -76,14 +76,37 @@ Copy `custom_components/octopus_forecast` into your Home Assistant `config/custo
 
 ## Configuration
 
-**Settings → Devices & Services → Add Integration → Octopus Forecast.**
+**Settings → Devices & Services → Add Integration → Octopus Forecast**, then paste your **personal API key**.
 
-You'll be asked for your **personal API key**. Find it in your Octopus Italy
-account at [octopusenergy.it/area-personale](https://octopusenergy.it/area-personale)
-under *Impostazioni* (it looks like `sk_live_…`). If the key exposes more than one
-account you'll pick which to forecast; otherwise it's selected automatically.
+### Getting your API key
 
-The API key is stored by Home Assistant and only sent to Octopus's own API over HTTPS.
+Octopus Energy Italy does **not** show the API key anywhere in its website — you
+have to generate one from your account via their API. Do it once:
+
+1. Log in at [octopusenergy.it](https://octopusenergy.it/area-personale).
+2. Open your browser's developer console (**F12 → Console**).
+3. Paste this and press Enter:
+
+   ```js
+   fetch('/api/graphql/kraken', {
+     method: 'POST',
+     headers: { 'Content-Type': 'application/json' },
+     credentials: 'include',
+     body: JSON.stringify({ query: 'mutation { regenerateSecretKey { key } }' })
+   })
+     .then(r => r.json())
+     .then(d => console.log('YOUR OCTOPUS API KEY:', d.data.regenerateSecretKey.key));
+   ```
+
+4. Copy the printed key and paste it into the integration.
+
+> ⚠️ This **generates** the key. If you run it again it *regenerates* it and
+> invalidates the previous one, so keep the key somewhere safe and only rerun it
+> if you need to rotate it.
+
+If the key exposes more than one account you'll pick which to forecast; otherwise
+it's selected automatically. The key is stored by Home Assistant and only ever
+sent to Octopus's own API over HTTPS.
 
 ### Options
 
